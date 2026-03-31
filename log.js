@@ -26,6 +26,7 @@ function LogChange(changeType) {
     if (!changeLog) {
         LoadLogs();
     }
+
     entry = new LogEntry(Date.now(), changeType, clicks);
 
     changeLog.push(entry);
@@ -37,5 +38,7 @@ function LoadLogs() {
     data = localStorage.getItem(logStorageKey)
     if (data) {
         changeLog = JSON.parse(data);
+    } else {
+        changeLog = [];
     }
 }
