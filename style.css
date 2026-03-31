@@ -38,7 +38,15 @@ button {
 
 #subtract {
     top: 100%;
-    color: white;
+    transition: opacity 1s;
+    transition-behavior: allow-discrete;
+    height: 25px;
+    color: #111;
+}
+
+.subtract-hidden {
+    visibility: hidden;
+    opacity: 0;
 }
 
 .underlineButton {
@@ -54,13 +62,35 @@ button {
     font-size: 2vw;
 }
 
-#reset {
+#options {
     color: #4e4e4e;
 }
 
-#reset:hover {
-    color: #9c0000
+#optionsModal {
+    border: none;
+    padding: 20px;
 }
+
+#optionsModal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.optionsLayout {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.optionsButton {
+    display: block;
+    padding: 10px;
+    width: 100%;
+}
+
 
 @media (prefers-color-scheme: dark) {
     body {
@@ -68,11 +98,16 @@ button {
         background-color: #2B2A33;
     }
 
-    #reset {
+    #options {
         color: #bebebe;
     }
 
-    #reset:hover {
-        color: #ffa6a6;
+    #subtract {
+        color: #eee;
+    }
+
+    #optionsModal {
+        color: white;
+        background-color: #2B2A33;
     }
 }

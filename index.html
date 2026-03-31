@@ -19,9 +19,23 @@
         <button class="underlineButton" id="subtract" onclick="Subtract()">Subtract</button>
     </div>
 
-    <button class="underlineButton" id="reset" onclick="Reset()">Reset</button>
+    <button class="underlineButton" id="options" onclick="OpenOptions()">Options</button>
 
-    <script src="script.js"></script>
+    <dialog id="optionsModal">
+        <h2>Options</h2>
+        <div class="optionsLayout">
+            <button class="optionsButton" onclick="Rename()">Rename</button>
+            <button class="optionsButton" onclick="SetValue()">Set Value</button>
+            <button class="optionsButton" onclick="CopyLogs()">Copy Logs</button>
+            <button class="optionsButton" onclick="SoftReset()">Reset Count</button>
+            <button class="optionsButton" onclick="HardReset()">Delete Everything</button>
+            <button class="optionsButton" onclick="CloseOptions()">Close</button>
+        </div>
+    </dialog>
+
+    <script src="options.js"></script>
+    <script src="log.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
