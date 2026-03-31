@@ -77,7 +77,10 @@ function SoftReset() {
 // Removes everything from local storage
 function HardReset() {
     if (confirm("Fully reset count, settings, and all logs?")) {
-        localStorage.clear();
+        localStorage.removeItem(clicksStorageKey);
+        localStorage.removeItem(logStorageKey);
+        localStorage.removeItem(clickerNounKey);
+
         clicks = 0;
         clicksNoun = "Clicks";
         changeLog = [];
