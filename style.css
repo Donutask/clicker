@@ -6,8 +6,6 @@ body {
     text-align: center;
 }
 
-
-
 #container {
     position: absolute;
     left: 50%;
@@ -38,18 +36,26 @@ button {
     border-radius: 10px;
 }
 
-#reset {
+#subtract {
+    top: 100%;
+    color: white;
+}
+
+.underlineButton {
     display: block;
     position: absolute;
     bottom: 0%;
     left: 50%;
     transform: translate(-50%, 0%);
-    margin: 20px;
+    margin: 20px 0px;
     background: none;
     border: none;
-    color: #4e4e4e;
     text-decoration: underline;
     font-size: 2vw;
+}
+
+#reset {
+    color: #4e4e4e;
 }
 
 #reset:hover {

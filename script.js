@@ -7,18 +7,24 @@ sound.volume = 0.5;
 
 let clicks = 0;
 
-//Increase count and save
 function Click() {
-    clicks++;
+    ChangeCount(+1);
+
+    // Click sound
+    sound.play();
+}
+
+function Subtract() {
+    ChangeCount(-1);
+}
+
+//Change count and save
+function ChangeCount(amount) {
+    clicks += amount;
 
     UpdateDisplay();
 
     localStorage.setItem(localStorageKey, clicks)
-
-    // Click sound
-    let rate = (Math.random() * (0.75 - 1.25) + 1.25);
-    sound.playbackRate = rate;
-    sound.play();
 }
 
 
@@ -42,9 +48,11 @@ function Load() {
 
 // Removes from local storage
 function Reset() {
-    localStorage.removeItem(localStorageKey);
-    clicks = 0;
-    UpdateDisplay();
+    if (confirm("Reset click count?")) {
+        localStorage.removeItem(localStorageKey);
+        clicks = 0;
+        UpdateDisplay();
+    }
 }
 
 Load();
